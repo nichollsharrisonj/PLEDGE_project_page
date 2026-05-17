@@ -1,0 +1,5 @@
+{
+  "folder": "journal",
+  "template": "templates/daily-standup",
+  "format": "YYYY-MM-DD"
+}

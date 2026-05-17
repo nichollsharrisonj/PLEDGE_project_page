@@ -1,0 +1,1 @@
+Project management vault for the PLEDGE chatbot. Open in Obsidian and install dataview and kanban community plugins.
