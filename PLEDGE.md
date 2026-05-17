@@ -35,8 +35,13 @@ SORT file.name
 ```
 
 
+## Timeline
+
+**Target: September 15, 2026** — first usable pilot chatbot on a fixed reference library. Full program view: [[reference/timeline]].
+
 ## Reference
 
 - [[reference/architecture]] 
 - [[reference/eval-testing]] 
+- [[reference/timeline]]
 - [[kanban/pledge-roadmap]] 
