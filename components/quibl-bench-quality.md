@@ -19,6 +19,7 @@ Given these pairwise win rates, compute an ELO for each bot config, at the end  
 
 [ELO uncovered - best practices](https://arxiv.org/abs/2311.17295)
 
+
 ## Todo
 
 - [ ] Before this can happen, want quibl v1.0 finalized and published to PyPI.

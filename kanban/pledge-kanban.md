@@ -3,33 +3,25 @@
 tags:
   - Project/PLEDGE
   - Type/Kanban
-kanban-plugin: board
+kanban-plugin: list
 
 ---
-
-## Backlog
-
-
-
-## Triaged
-
-
 
 ## In progress
 
 - [ ] [[red-team-protocol]]
 - [ ] [[quibl-bench-safety]]
 - [ ] [[quibl-bench-quality]]
-- [ ] [[quibl-bench]]
 - [ ] [[quibl-core]]
+- [ ] [[quibl-bench]]
 - [ ] [[pledge-api]]
 
 
-## Review
+## Doing
 
 
 
-## Done
+## Complete
 
 
 
@@ -37,6 +29,6 @@ kanban-plugin: board
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false,false,true,true]}
+{"kanban-plugin":"list","list-collapse":[false,false,false]}
 ```
 %%

@@ -44,4 +44,4 @@ SORT file.name
 - [[reference/architecture]] 
 - [[reference/eval-testing]] 
 - [[reference/timeline]]
-- [[kanban/pledge-roadmap]] 
+- [[pledge-kanban]] 

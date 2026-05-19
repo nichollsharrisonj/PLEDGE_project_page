@@ -16,7 +16,7 @@ Structured red teaming to find gaps in the benchmark dataset.
 ## Tasks
 
 - [ ] Draft recruitment plan
-- [ ] Define findings structure
+- [ ] Define red-team findings data structure
 
 ## Links
 

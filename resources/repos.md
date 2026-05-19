@@ -15,4 +15,3 @@ We will maintain the list of repositories associated with this project here.
 | **quibl_bench**               | *TBD* | Jupyter notebook |
 | **PLEDGE_project_management** | `.`   | This vault       |
 | **PLEDGE_quibl_configs**      |       |                  |
-|                               |       |                  |

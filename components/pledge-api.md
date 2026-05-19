@@ -11,7 +11,7 @@ repo: pledge_api_app
 
 ## Goal
 
-FastAPI wrapper around the production `qubil` intervention profile for PLEDGE. Implements server code: routing, rate-limiting, deployment, analytics collection, etc.
+FastAPI wrapper around the production `quibl` intervention profile for PLEDGE. Implements server code: routing, rate-limiting, deployment, analytics collection, etc.
 
 ## Tasks
 
