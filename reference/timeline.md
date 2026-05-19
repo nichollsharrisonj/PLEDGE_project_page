@@ -17,3 +17,14 @@ gantt
     Quality improvement cycle             :loopq, 2026-10-15, 2027-03-31
     Safety improvement cycle              :loops, 2026-11-01, 2027-03-31
 ```
+
+
+## Open tasks (project-wide)
+
+
+```dataview
+TASK
+FROM "components"
+WHERE !completed
+SORT file.name
+```

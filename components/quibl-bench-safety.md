@@ -6,7 +6,7 @@ tags:
 priority: 3
 repo: quibl_bench
 ---
-	# Bot Response Safety Evaluation Loop
+
 ## Goal
 The goal of the safety evaluation loop is to standardize our process for iterating on the safety (guardrail performance) of the chatbot.
 
@@ -15,22 +15,26 @@ We will curate and use a balanced dataset of query and response pairs with a div
 To score metrics will be derived from dataset benchmark performance (over-refusal / under-refusal rates):
 
 * **Over-refusal**
+
 	$$FPR = FP / (FP + TN)$$
 * **Under-refusal**
+
 	$$TPR = FN / (TP + FN)$$
 * **F-beta** - We want $\beta >> 1$ to favor recall over precision for safety.
+
 	$$F_\beta = \frac{(1 + \beta^2) \times TP}{(1 + \beta^2) \times TP + FP + \beta^2 \times FN}$$
 
 
 ## Benchmark
-N (query, response) refuse/accept pairs that should be balanced across a joint distribution of:
+N -TBD- (query, response) refuse/accept pairs that should be balanced across a joint distribution of:
 
 * Violation category: topic that could yield unsafe content
 * Attack style: phrasing / jailbreak type
 
+Balance must be enforced for statistical validity.
 
-See [OWASP LLM top 10](https://genai.owasp.org/llm-top-10/)
-Note: balance must be enforced for statistical validity
+See [OWASP LLM top 10](https://genai.owasp.org/llm-top-10/) for some examples of known real-world threats to LLMS.
+
 
 
 ## Readings
@@ -66,12 +70,12 @@ Process diagram:
 
 ### Guardrail Tuning Loop Structure
 
-The guardrail optimization loop runs in two phases:
+The guardrail optimization loop will run in two phases:
 
 1. **Exploratory**: Config iterations run against the visible red-team corpus and regression set only. The goal is to explore a variety of guardrail styles (different models, different LLM-as-Judge prompts, different context passed to guardrails, finetuning of guardrail models, and so on) and map which parameters move F-beta significantly.
 2. **Refinement**: After the exploratory tuning, take the guardrail pattern with the highest F-beta on the tuning set, and refine it further with more fine-grainwd adjustments.
 
-After these phase, a single **formal evaluation** is run against the blinded eval set. If the config fails to meet the target threshold, the process returns to the exploratory phase. The config author does not review which individual eval cases failed before deciding on the next config iteration.
+After these phase, a single formal evaluation is run against the blinded eval set. If the config fails to meet a target  $F_{\beta}$ threshold (TBD), we return to the exploratory red-teaming phase and start over. The config author does not review which individual eval cases failed before deciding on the next config iteration.
 
 ## Individual Guardrail Finetuning 
 For certain very sensitive topics, we might find that LLM-as-judge with base OpenAI LLMs are not sufficient. In this case, it will make sense to fine-tune a model on a specific refusal category and add this as its own guardrail (In any case, fine-tuning would likely save on inference cost for guardrails at scale, so may ultimately be worthwhile)
