@@ -10,6 +10,8 @@ repo: quibl_bench
 ## Goal
 The goal of the safety evaluation loop is to standardize our process for iterating on the safety (guardrail performance) of the PLEDGE chatbot. *In this loop, we only care about refusals of malicious/off-topic messages. For response quality, see [[PLEDGE Quality Iteration]].*
 
+The guardrails will be built on [NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails), an open-source guardrail framework from NVidia enabling fairly human-readable configs.
+
 We will curate and use a balanced dataset of query and response pairs with a diversity of violation categories and attack styles to optimize the guardrails to refuse when appropriate.
 
 To give an optimization target, metrics can be derived from dataset benchmark performance (over-refusal / under-refusal rates):
@@ -40,9 +42,9 @@ See [OWASP LLM top 10](https://genai.owasp.org/llm-top-10/) for some examples of
 
 ## Literature
 
-* [MART - Multi-Round Automatic Red-Teaming](https://arxiv.org/pdf/2311.07689)
-* [Llama 2 - Safety/red teaming sections](https://arxiv.org/pdf/2307.09288)
-
+- [MART - Multi-Round Automatic Red-Teaming](https://arxiv.org/pdf/2311.07689)
+- [Llama 2 - Safety/red teaming sections](https://arxiv.org/pdf/2307.09288)
+- [Nemo Guardrails Paper](https://arxiv.org/abs/2310.10501)
 ## Constructing the Benchmark
 
 ### Red teaming phase
