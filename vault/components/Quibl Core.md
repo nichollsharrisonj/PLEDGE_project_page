@@ -22,6 +22,9 @@ Within a QUIBL config, the following things are defined:
 	- Rail prompts
 	- Retrieval orchestration logic
 - Extract, Transform, Load pipeline
+	- Parsing
+	- Chunking
+	- Metadata
 - Vector Database (default ChromaDB)
 - Retrieval Strategy
 

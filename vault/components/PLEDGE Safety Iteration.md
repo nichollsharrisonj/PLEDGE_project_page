@@ -65,8 +65,7 @@ Note: It is not uncommon in practice to task offload some of this dataset curati
 
 The blinding operates at the level of specific query instances, but attack types are considered public knowledge. This prevents direct overfitting to known phrasing (or, for example, specific suffixes) while ensuring the eval set testing confirmed effective attack patterns.
 
-A regression set is accumulated over time. Cases that the latest validated config handles correctly are added to this set to guard against regressions in later iteration cycles.
-
+A regression set will be accumulated over time. Cases that the latest validated config handles correctly are added to this set to guard against regressions in later iteration cycles.
 
 #### A rough process diagram:
 ![[Pasted image 20260518211229.png]]

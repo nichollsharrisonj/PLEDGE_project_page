@@ -14,12 +14,12 @@ An eval cycle consists of a set of pairwise head-to-head comparisons of bots acc
 
 While pairwise comparisons are more feasible for human testers, they don't directly produce a result that can be interpreted to rank a larger number of bot configs. A common way in AI literature of interpreting a series of pairwise comparisons is [ELO](https://en.wikipedia.org/wiki/Elo_rating_system)
 
-There are plenty of projects evaluating frontier models by ELO. See [arena.ai](https://arena.ai/leaderboard/text):
+There are plenty of projects comparatively evaluating top frontier models with the same ELO approach. See [arena.ai](https://arena.ai/leaderboard/text):
 
 ![[Pasted image 20260519210233.png]]
 
 
-Our testing harness will similarly gather analytics on our domain-specific bot allowing an ELO to be determined for each PLEDGE QUIBL config, at the end  of the evaluation cycle, the highest rated bot wins. We will also want to collect look at important metrics like response latency, token consumption, and cost relative to this ranking. The best possible agentic PLEDGE research bot may be impractical if it takes 30 seconds to return an answer, even if the answer is perfect.
+Our testing harness will similarly gather analytics on our domain-specific bot allowing an ELO to be determined for each PLEDGE QUIBL config where at the end of the evaluation cycle, the highest rated bot wins. We will also want to collect look at important metrics like response latency, token consumption, and cost relative to this ranking. The best possible agentic PLEDGE research bot may be impractical if it takes more than 30 seconds to return an answer, even if the answer is perfect.
 
 The manipulation here (as opposed to [[PLEDGE Safety Iteration]]) is in the non-guardrail components of the bots' QUIBL configs. For the purposes of quality iteration, guardrails can be ignored or considered invariant.
 
