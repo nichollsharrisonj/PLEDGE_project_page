@@ -1,21 +1,16 @@
-import { QuartzConfig } from "./quartz/cfg"
-import * as Plugin from "./quartz/plugins"
+import { QuartzConfig } from "./quartz/cfg";
+import * as Plugin from "./quartz/plugins";
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "PLEDGE Chatbot Resource Page",
+    pageTitle: "PLEDGE Chatbot Resources",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
     analytics: null,
     locale: "en-US",
     baseUrl: "nichollsharrisonj.github.io/PLEDGE_project_page",
-    ignorePatterns: [
-      ".obsidian/**",
-      "private/**",
-      "templates/**",
-      "PLEDGE.md",
-    ],
+    ignorePatterns: [".obsidian/**", "private/**", "templates/**", "PLEDGE.md"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
@@ -87,6 +82,6 @@ const config: QuartzConfig = {
       Plugin.NotFoundPage(),
     ],
   },
-}
+};
 
-export default config
+export default config;

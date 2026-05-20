@@ -23,16 +23,16 @@ gantt
     todayMarker on
 
     section Release Milestone
-    PLEDGE v1 pilot live! :milestone, v1, 2026-09-15, 0d
+    PLEDGE v1 pilot live :milestone, v1, 2026-09-15, 0d
 
     section QUIBL
     QUIBL v1.0 library and RAG :lib, 2026-05-20, 2026-07-25
-    QUIBL v1.0 publish, packaging, and docs :pypi, 2026-07-15, 2026-08-05
+    QUIBL v1.0 publish packaging and docs :pypi, 2026-07-15, 2026-08-05
 
     section Safety
     Safety eval harness :sh, 2026-06-10, 2026-07-15
-    Guardrail tuning cycles optimizing F-beta :stune, 2026-07-15, 2026-09-05
-    Blinded safety eval for v1 (if we fail, more tuning) :sblind, 2026-09-01, 2026-09-12
+    Guardrail tuning cycles :stune, 2026-07-15, 2026-09-05
+    Blinded safety eval for v1 :sblind, 2026-09-01, 2026-09-12
 
     section Quality
     Quality eval harness :qh, 2026-06-25, 2026-07-25
@@ -40,14 +40,14 @@ gantt
 
     section Analytics
     Analytics backend :ainst, 2026-06-10, 2026-08-10
-    
+
     section Production
-    Build prod/nonprod PLEDGE API :app, 2026-08-15, 2026-09-01
+    Build prod and nonprod PLEDGE API :app, 2026-08-15, 2026-09-01
     Hosting and CI/CD :host, 2026-08-20, 2026-09-10
-    Integrate on PLEDGE site? :integrate 2026-08-20, 2026-09-10
+    Integrate on PLEDGE site :integrate, 2026-08-20, 2026-09-10
 
     section Post-v1
-    v2+ QUIBL research-capable bot :v2, 2026-09-15, 2026-12-15
+    v2 QUIBL research-capable bot :v2, 2026-09-15, 2026-12-15
     Ongoing safety and quality loops :oloop, 2026-09-15, 2026-12-15
 ```
 
