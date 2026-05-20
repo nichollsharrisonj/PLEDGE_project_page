@@ -1,17 +1,19 @@
-# PLEDGE project page
+# PLEDGE project management
 
-Project management notes for the PLEDGE chatbot, published with [Quartz](https://quartz.jzhao.xyz/).
-
+- **`vault/`** — Obsidian vault (open this folder in Obsidian)
+- **`site/`** — Quartz publisher for GitHub Pages
 - **Live site:** https://nichollsharrisonj.github.io/PLEDGE_project_page/
-- **Obsidian:** open this repo as a vault. Install the [Dataview](https://github.com/blacksmithgu/obsidian-dataview) and [Kanban](https://github.com/mgmeyers/obsidian-kanban) plugins for dynamic views on `index.md` and `kanban/pledge-kanban.md`.
 
-## Local preview
+## Obsidian
+
+Open `vault/` as the vault root.
+
+## Publish
 
 ```bash
+cd site
 npm ci
-npx quartz build --serve --directory .
+npx quartz build --serve --directory ../vault
 ```
 
-## Deploy
-
-Pushes to `main` build and deploy this quartz site via GitHub Actions. 
+Pushes to `main` deploy via `.github/workflows/deploy.yml`.

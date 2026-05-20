@@ -7,11 +7,23 @@ priority: 3
 repo: quibl
 ---
 
-# Quibl core library
+# QUIBL core library
 
 ## Goal
 
-Stable `InterventionBot` API: intervention profile manifest loading, guardrails orchestration, optional Chroma RAG (or external), unstructured data ETL pipeline, agentic behavior?
+The goal of **QUIBL** (**QU**ick **I**ntervention **B**ot **L**ibrary) is to create a human-readable single source of truth defining a complete chatbot. Because we want to comparatively evaluate many strategies for things like guardrails and corpus retrieval, defining each bot in as a `quibl.InterventionBot` instantiated from a config folder allows easy referencing, evaluation, and comparison, as well as observability into the guardrail internals when, for example, a refusal occurs. The library is designed to separate the bot logic from any app code, so we can easily create testing harnesses that swap in many different bot configs and collect informative analytics about how each one performs. 
+
+Within a QUIBL config, the following things are defined:
+- System prompt
+- Application Model
+- Full NeMo guardrails config
+	- Individual rails
+	- Rail models
+	- Rail prompts
+	- Retrieval orchestration logic
+- Extract, Transform, Load pipeline
+- Vector Database (default ChromaDB)
+- Retrieval Strategy
 
 ### RAG Materials/Strategy
 - [GraphRAG](https://colab.research.google.com/github/Unstructured-IO/notebooks/blob/main/notebooks/GraphRAG_for_Academic_Papers.ipynb)

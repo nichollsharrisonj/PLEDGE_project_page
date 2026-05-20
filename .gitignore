@@ -1,8 +1,8 @@
 .DS_Store
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
-.obsidian/cache
+vault/.obsidian/workspace.json
+vault/.obsidian/workspace-mobile.json
+vault/.obsidian/cache
 .trash/
-node_modules/
-public/
-.quartz-cache/
+site/node_modules/
+site/public/
+site/.quartz-cache/

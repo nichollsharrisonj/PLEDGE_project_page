@@ -14,6 +14,10 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+defaults:
+  run:
+    working-directory: site
+
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -27,11 +31,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build Quartz
-        run: npx quartz build --directory .
+        run: npx quartz build --directory ../vault
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: site/public
 
   deploy:
     needs: build

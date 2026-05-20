@@ -10,7 +10,7 @@ This page offers a proposed dev/rollout scheduled for PLEDGE v1 and after. The b
 
 ## v1 release target
 
-I set **2026-09-15** as the hopeful target for release of a first usable pilot: a live hosted [[PLEDGE API]] backed by a **v1** QUIBL config implementing primitive retrieval on a fixed reference corpus, with basic chunking/RAG and guardrails that have passed the safety loop.
+I set **2026-09-15** as the hopeful target for release of a first usable pilot: a live hosted [[PLEDGE API]] backed by a **v1** QUIBL config implementing primitive retrieval on a fixed reference corpus, with basic chunking/RAG and guardrails that have passed the safety loop. 
 
 Response quality for v1 is whatever the leading config earns in pairwise eval before freeze, but will naturally be constrained by the above. v2 and later (larger corpus, richer retrieval, tool access) will be under ongoing development after the v1 release, always passing through the same quality and safety eval loops (pending changes we decide on based on what we learn from v1 rollout)
 
@@ -22,7 +22,7 @@ gantt
     tickInterval 1month
     todayMarker on
 
-    section Milestones
+    section Release Milestone
     PLEDGE v1 pilot live! :milestone, v1, 2026-09-15, 0d
 
     section QUIBL
@@ -40,7 +40,7 @@ gantt
 
     section Analytics
     Analytics backend :ainst, 2026-06-10, 2026-08-10
-
+    
     section Production
     Build prod/nonprod PLEDGE API :app, 2026-08-15, 2026-09-01
     Hosting and CI/CD :host, 2026-08-20, 2026-09-10

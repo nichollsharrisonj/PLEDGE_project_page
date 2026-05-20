@@ -1,0 +1,99 @@
+@use "./base.scss";
+
+html {
+  font-size: 88%;
+}
+
+article pre:has(> code.mermaid) {
+  overflow-x: auto;
+}
+
+// Nord accents on the default dark Quartz shell (background stays #161618)
+.page-title a {
+  color: #ebcb8b;
+}
+
+.desktop-explorer h2 {
+  color: #88c0d0;
+}
+
+.explorer-ul a {
+  color: #d8dee9;
+
+  &.active {
+    color: #a3be8c;
+    opacity: 1;
+  }
+}
+
+.explorer .folder-container .folder-title,
+.explorer .folder-container div > a {
+  color: #81a1c1;
+}
+
+.breadcrumb-element a {
+  color: #88c0d0;
+}
+
+.graph > h3 {
+  color: #81a1c1;
+}
+
+article {
+  p,
+  li,
+  td,
+  th,
+  blockquote {
+    color: #d8dee9;
+  }
+
+  strong {
+    color: #ebcb8b;
+  }
+
+  blockquote {
+    border-left-color: #b48ead;
+  }
+
+  a.internal,
+  a.external {
+    color: #88c0d0;
+
+    &:hover {
+      color: #8fbcbb;
+    }
+  }
+
+  h1 {
+    color: #bf616a;
+  }
+  h2 {
+    color: #ebcb8b;
+  }
+  h3 {
+    color: #a3be8c;
+  }
+  h4 {
+    color: #b48ead;
+  }
+  h5 {
+    color: #8fbcbb;
+  }
+  h6 {
+    color: #81a1c1;
+  }
+
+  & > h1 > a[role="anchor"],
+  & > h2 > a[role="anchor"],
+  & > h3 > a[role="anchor"],
+  & > h4 > a[role="anchor"],
+  & > h5 > a[role="anchor"],
+  & > h6 > a[role="anchor"] {
+    color: inherit;
+  }
+}
+
+.content-meta {
+  color: #81a1c1;
+}

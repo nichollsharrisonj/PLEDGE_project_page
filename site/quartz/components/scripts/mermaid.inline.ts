@@ -220,21 +220,61 @@ document.addEventListener("nav", async () => {
     )
 
     const darkMode = document.documentElement.getAttribute("saved-theme") === "dark"
+    const fontFamily = computedStyleMap["--codeFont"]
+
+    // Quartz maps --light to the page background; using it as primaryColor makes gantt bars grey/invisible.
+    const darkThemeVariables = {
+      darkMode: true,
+      background: "#161618",
+      fontFamily,
+      // Bars
+      primaryColor: "#5e81ac",
+      primaryBorderColor: "#88c0d0",
+      secondaryColor: "#88c0d0",
+      tertiaryColor: "#81a1c1",
+      mainBkg: "#5e81ac",
+      taskBkgColor: "#5e81ac",
+      taskBkgColor2: "#88c0d0",
+      activeTaskBkgColor: "#a3be8c",
+      activeTaskBorderColor: "#eceff4",
+      doneTaskBkgColor: "#4c566a",
+      critBkgColor: "#bf616a",
+      critBorderColor: "#ebcb8b",
+      // Labels (title, section names, axis) — light on dark background
+      titleColor: "#eceff4",
+      textColor: "#d8dee9",
+      mainContrastColor: "#d8dee9",
+      primaryTextColor: "#d8dee9",
+      secondaryTextColor: "#d8dee9",
+      tertiaryTextColor: "#d8dee9",
+      lineColor: "#4c566a",
+      gridColor: "#4c566a",
+      todayLineColor: "#bf616a",
+      sectionBkgColor: "#1e2128",
+      sectionBkgColor2: "#2a303c",
+      // Text on top of colored bars only
+      taskTextColor: "#161618",
+      taskTextOutsideColor: "#d8dee9",
+      taskTextLightColor: "#d8dee9",
+    }
+
     mermaid.initialize({
       startOnLoad: false,
       securityLevel: "loose",
-      theme: darkMode ? "dark" : "base",
-      themeVariables: {
-        fontFamily: computedStyleMap["--codeFont"],
-        primaryColor: computedStyleMap["--light"],
-        primaryTextColor: computedStyleMap["--darkgray"],
-        primaryBorderColor: computedStyleMap["--tertiary"],
-        lineColor: computedStyleMap["--darkgray"],
-        secondaryColor: computedStyleMap["--secondary"],
-        tertiaryColor: computedStyleMap["--tertiary"],
-        clusterBkg: computedStyleMap["--light"],
-        edgeLabelBackground: computedStyleMap["--highlight"],
-      },
+      theme: "base",
+      themeVariables: darkMode
+        ? darkThemeVariables
+        : {
+            fontFamily,
+            primaryColor: computedStyleMap["--secondary"],
+            primaryTextColor: computedStyleMap["--dark"],
+            primaryBorderColor: computedStyleMap["--tertiary"],
+            lineColor: computedStyleMap["--gray"],
+            secondaryColor: computedStyleMap["--tertiary"],
+            tertiaryColor: computedStyleMap["--secondary"],
+            clusterBkg: computedStyleMap["--lightgray"],
+            edgeLabelBackground: computedStyleMap["--highlight"],
+          },
     })
 
     await mermaid.run({ nodes })
