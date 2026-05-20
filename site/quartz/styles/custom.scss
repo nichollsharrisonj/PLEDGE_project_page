@@ -1,9 +1,5 @@
 @use "./base.scss";
 
-html {
-  font-size: 88%;
-}
-
 article pre:has(> code.mermaid) {
   overflow-x: auto;
 }
