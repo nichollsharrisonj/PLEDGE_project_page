@@ -45,6 +45,8 @@ See [OWASP LLM top 10](https://genai.owasp.org/llm-top-10/) for some examples of
 - [MART - Multi-Round Automatic Red-Teaming](https://arxiv.org/pdf/2311.07689)
 - [Llama 2 - Safety/red teaming sections](https://arxiv.org/pdf/2307.09288)
 - [Nemo Guardrails Paper](https://arxiv.org/abs/2310.10501)
+### Other resources
+- [colang 2 reference](https://docs.nvidia.com/nemo/guardrails/latest/configure-rails/colang/colang-2/language-reference/index.html)
 ## Constructing the Benchmark
 
 ### Red teaming phase
