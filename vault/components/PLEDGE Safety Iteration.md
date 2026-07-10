@@ -10,7 +10,7 @@ repo: quibl_bench
 ## Goal
 The goal of the safety evaluation loop is to standardize our process for iterating on the safety (guardrail performance) of the PLEDGE chatbot. *In this loop, we only care about refusals of malicious/off-topic messages. For response quality, see [[PLEDGE Quality Iteration]].*
 
-The guardrails will be built on [NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails), an open-source guardrail framework from NVidia enabling fairly human-readable configs.
+The guardrail logic will be built on [NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails), an open-source guardrail framework from NVidia enabling fairly human-readable configs.
 
 We will curate and use a balanced dataset of query and response pairs with a diversity of violation categories and attack styles to optimize the guardrails to refuse when appropriate.
 
@@ -36,17 +36,17 @@ N -TBD- (query, response) refuse/accept pairs that should be balanced across a j
 
 Balance must be enforced for statistical validity.
 
-See [OWASP LLM top 10](https://genai.owasp.org/llm-top-10/) for some examples of known real-world threats to LLMS.
-
-
+See [OWASP LLM top 10](https://genai.owasp.org/llm-top-10/) for some examples of known real-world attacks on LLMS.
 
 ## Literature
 
 - [MART - Multi-Round Automatic Red-Teaming](https://arxiv.org/pdf/2311.07689)
 - [Llama 2 - Safety/red teaming sections](https://arxiv.org/pdf/2307.09288)
 - [Nemo Guardrails Paper](https://arxiv.org/abs/2310.10501)
+- [Llama Guard](https://ai.meta.com/research/publications/llama-guard-llm-based-input-output-safeguard-for-human-ai-conversations/)
+- [Anthropic Constitutional Classifiers](https://arxiv.org/abs/2501.18837)
 ### Other resources
-- [colang 2 reference](https://docs.nvidia.com/nemo/guardrails/latest/configure-rails/colang/colang-2/language-reference/index.html)
+- [colang 2 reference](https://docs.nvidia.com/nemo/guardrails/configure-guardrails/colang/colang-2/language-reference)
 ## Constructing the Benchmark
 
 ### Red teaming phase
@@ -83,11 +83,10 @@ The guardrail optimization loop will run in two phases:
 After these phase, a single formal evaluation is run against the blinded eval set. If the config fails to meet a target  $F_{\beta}$ threshold (TBD), we return to the exploratory red-teaming phase and start over. The config author does not review which individual eval cases failed before deciding on the next config iteration.
 
 ## Individual Guardrail Finetuning
-For certain very sensitive topics, we might find that LLM-as-judge with base OpenAI models is not sufficient. In this case, it will make sense to fine-tune a model on a specific refusal category and add this as its own guardrail (In any case, fine-tuning would likely save on inference cost for guardrails at scale, so may ultimately be worthwhile)
-To achieve this, we will gather a set of potentially human created, or AI-created and human-validated Q/R pairs
-As this is out of scope of a quibl config, it would require an extension of chatbot versioning to include finetuning checkpoint as well as quibl config (e.g. quibl_\<checkpoints>\_<config_ver>)
 
-One very basic approach to fine tuning is "Safety Context Distillation" (see llama paper)
+Ultimately, LLM-as-judge with base OpenAI models is not sufficient. A significant part of this project will be to fine-tune a model on a curated dataset (comprising harmful cases from the red-team dataset and harmless examples) to achieve the desired refusal behavior.
+As this is out of scope of a quibl config, it will require an extension of chatbot versioning to include finetuning checkpoint as well as quibl config (e.g. quibl_\<checkpoints>\_<config_ver>)
+
 
 
 ---
